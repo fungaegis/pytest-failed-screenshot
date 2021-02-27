@@ -2,6 +2,7 @@ pytest-failed-screenshot: pytest plugin
 ==============
 
 For UI automation test cases using selenium and appium, screenshots are saved when they fail, and are attached to the report when allure is used
+
 用于使用了Selenium和Appium的UI自动化测试用例在失败时进行截图保存并且在开启allure的时候会将截图附加到报告上
 
 install
