@@ -14,7 +14,9 @@ setup(
     description='Test case fails,take a screenshot,save it,attach it to the allure',
     long_description='After the test case fails, take a screenshot in time, '
                      'save the screenshot in the specified address and attach it to the allure;'
-                     '\nUsage: cmd line or main function --switch={on:off} --address=image path, default is off',
+                     '\nUsage: cmd line or main function '
+                     '--screenshot={on:off} '
+                     '--screenshot_path=file path,default is off, if is on it will be save "screenshot" of project root',
     classifiers=[
         'Framework :: Pytest',
         'Programming Language :: Python :: 3',
@@ -24,7 +26,7 @@ setup(
     license='MIT License',
     py_modules=['pytest_failed_screenshot'],
     keywords=[
-        'pytest', 'py.test', 'pytest_failed_screenshot', 'allure', 'screenshot'
+        'pytest', 'py.test', 'pytest_failed_screenshot', 'allure', 'screenshot', 'selenium', 'appium'
     ],
 
     install_requires=[
