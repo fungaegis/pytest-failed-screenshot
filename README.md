@@ -33,6 +33,32 @@ options:
       并且附加到allure报告上
     - 绝对路径: 截图将保存在指定的路径上,并且附加到allure报告上
     
+Demo
+======
+The driver instances of selenium and appium must be transferred by a fixture.
+
+selenium和appium的驱动实例必须通过fixture函数的方式前置传入
+
+```python
+import pytest
+from selenium import webdriver
+
+
+@pytest.fixture()
+def init_driver():
+    driver = webdriver.Chrome()
+    yield driver
+    driver.close()
+    driver.quit()
+
+
+def test_login_success(init_driver):
+    init_driver.get("https://github.com/fungaegis/pytest-failed-screenshot")
+    assert False
+```
+
+command: `pytest --screenshot=on --screenshot_path=on`
+
 tip:
 - Support the use of pytest-xdist together
 

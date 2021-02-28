@@ -5,6 +5,7 @@ import uuid
 import shutil
 import allure
 import pytest
+from selenium.webdriver.remote.webdriver import WebDriver
 
 
 def pytest_addoption(parser):
@@ -39,7 +40,7 @@ def pytest_runtest_makereport(item, call):
     result = outcome.get_result()
     if item.config.getvalue("screenshot") == "on" and result.when == "call" and result.failed:
         for value in item.funcargs.values():
-            if "webdriver" in repr(value):
+            if isinstance(value, WebDriver):
                 path = item.config.getvalue("screenshot_path")
                 if path not in ("off", "on"):  # if command passes in the path, it is saved
                     capture_screenshot(path, item.name, value)
