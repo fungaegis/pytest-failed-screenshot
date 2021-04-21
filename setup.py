@@ -1,11 +1,11 @@
-from setuptools import setup
+from setuptools import find_packages, setup
 
 """
 author: fungaegis
 github: https://github.com/fungaegis/pytest-failed-screenshot
 """
 setup(
-    name='screenshot',
+    name='pytest_failed_screenshot',
     url='https://github.com/fungaegis/pytest-failed-screenshot',
     version='1.1.0',
     author="fungaegis",
@@ -23,6 +23,7 @@ setup(
         'Operating System :: POSIX :: Linux',
         'Operating System :: MacOS :: MacOS X'
     ],
+    packages = find_packages(exclude=['tests', 'tests.*']),
     keywords=['pytest', 'allure', 'screenshot', 'selenium', 'appium'],
     install_requires=[
         'pytest',
@@ -33,5 +34,6 @@ setup(
     ],
     package_data={
         'backend.screenshot': ['webdrivers/**/*']
-    }
+    },
+    test_suite='tests'
 )
