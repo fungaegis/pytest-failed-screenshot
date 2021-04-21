@@ -11,18 +11,21 @@ setup(
     author="fungaegis",
     author_email="fungaegis@gmail.com",
     description='Test case fails, take a screenshot, save it, attach it to the allure',
+    python_requires='>=3',
     classifiers=[
         'Framework :: Pytest',
-        'Programming Language :: Python :: 3',
+        'License :: OSI Approved :: MIT License',
         'Topic :: Software Development :: Testing',
+        'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Operating System :: Microsoft :: Windows',
+        'Operating System :: POSIX :: Linux',
+        'Operating System :: MacOS :: MacOS X'
     ],
-    license='MIT License',
-    py_modules=['pytest_failed_screenshot'],
     keywords=[
-        'pytest', 'py.test', 'pytest_failed_screenshot', 'allure', 'screenshot', 'selenium', 'appium'
+        'pytest', 'allure', 'screenshot', 'selenium', 'appium'
     ],
-
     install_requires=[
         'pytest',
         'selenium',
@@ -30,9 +33,7 @@ setup(
         'allure-python-commons',
         'helium'
     ],
-    entry_points={
-        'pytest11': [
-            'failed_screenshot = pytest_failed_screenshot',
-        ]
+    package_data={
+        'backend.screenshot': ['webdrivers/**/*']
     }
 )
