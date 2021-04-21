@@ -8,7 +8,7 @@ github: https://github.com/fungaegis/pytest-failed-screenshot
 setup(
     name='pytest_failed_screenshot',
     url='https://github.com/fungaegis/pytest-failed-screenshot',
-    version='1.0.2',
+    version='1.1.0',
     author="fungaegis",
     author_email="fungaegis@gmail.com",
     description='Test case fails, take a screenshot, save it, attach it to the allure',
