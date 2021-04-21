@@ -1,5 +1,0 @@
-pytest>=5.3.2
-selenium>=3.141.0
-allure-pytest>=2.8.34
-allure-python-commons>=2.8.34
-helium>=3.0.6

@@ -1,0 +1,14 @@
+1.0.3:
+  date: 2021-04-21
+  chores:
+    -
+
+1.0.2:
+  date: 2021-04-21
+  chores:
+    - Update README.md/rst and add Demo for Helium library
+
+1.0.1:
+  date: 2021-04-21
+  chores:
+    - Support Helium library - https://github.com/mherrmann/selenium-python-helium

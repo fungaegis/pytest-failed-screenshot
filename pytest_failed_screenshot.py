@@ -1,12 +1,13 @@
 import os
 import re
+import shutil
 import time
 import uuid
-import shutil
+
 import allure
 import pytest
-from selenium.webdriver.remote.webdriver import WebDriver
 from helium import get_driver
+from selenium.webdriver.remote.webdriver import WebDriver
 
 
 def pytest_addoption(parser):
