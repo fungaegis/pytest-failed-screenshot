@@ -1,0 +1,7 @@
+allure-pytest>=2.8.40
+allure-python-commons>=2.8.40
+isort>=5.8.0
+helium>=3.0.6
+pur>=5.4.0
+pytest>=6.2.3
+selenium>=3.141.0
