@@ -1,12 +1,19 @@
 1.0.3:
   date: 2021-04-21
   chores:
-    -
+    - Add isort>=5.8.0
+    - Add pur>=5.4.0
+    - Update pytest>=5.3.2 to pytest>=6.2.3
+    - Update allure-pytest>=2.8.34 to allure-pytest>=2.8.40
+    - Update allure-python-commons>=2.8.34 to allure-python-commons>=2.8.40
+    - Add chromedriver, geckodriver for windows, linux and mac.
+    - Add demo tests.
+    - Update README.md.
 
 1.0.2:
   date: 2021-04-21
   chores:
-    - Update README.md/rst and add Demo for Helium library
+    - Update README.md/rst and add Demo for Helium library.
 
 1.0.1:
   date: 2021-04-21
