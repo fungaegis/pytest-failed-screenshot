@@ -1,27 +1,29 @@
 from setuptools import setup
 
+"""
+author: fungaegis
+github: https://github.com/fungaegis/pytest-failed-screenshot
+"""
+with open("./README.rst", "r") as readme:
+    long_description = readme.read()
 setup(
     name='pytest_failed_screenshot',
     url='https://github.com/fungaegis/pytest-failed-screenshot',
-    version='1.1.0',
+    version='1.0.2',
     author="fungaegis",
     author_email="fungaegis@gmail.com",
-    description='Test case fails, take a screenshot, save it, attach it to the allure',
-    python_requires='>=3',
-    license='MIT License',
+    description='Test case fails,take a screenshot,save it,attach it to the allure',
+    long_description=long_description,
     classifiers=[
         'Framework :: Pytest',
-        'License :: OSI Approved :: MIT License',
-        'Topic :: Software Development :: Testing',
         'Programming Language :: Python :: 3',
+        'Topic :: Software Development :: Testing',
         'Programming Language :: Python :: 3.7',
-        'Operating System :: Microsoft :: Windows',
-        'Operating System :: POSIX :: Linux',
-        'Operating System :: MacOS :: MacOS X'
     ],
-    py_modules=['backend'],
+    license='MIT License',
+    py_modules=['pytest_failed_screenshot'],
     keywords=[
-        'pytest', 'allure', 'screenshot', 'selenium', 'appium', 'helium'
+        'pytest', 'py.test', 'pytest_failed_screenshot', 'allure', 'screenshot', 'selenium', 'appium'
     ],
 
     install_requires=[
@@ -33,7 +35,7 @@ setup(
     ],
     entry_points={
         'pytest11': [
-            'failed_screenshot = backend',
+            'failed_screenshot = pytest_failed_screenshot',
         ]
     }
 )
