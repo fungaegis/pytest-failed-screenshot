@@ -6,6 +6,7 @@ import shutil
 import allure
 import pytest
 from selenium.webdriver.remote.webdriver import WebDriver
+from helium import get_driver
 
 
 def pytest_addoption(parser):
@@ -38,22 +39,29 @@ def pytest_configure(config):
 def pytest_runtest_makereport(item, call):
     outcome = yield
     result = outcome.get_result()
+    instance = False
     if item.config.getvalue("screenshot") == "on" and result.when == "call" and result.failed:
         for value in item.funcargs.values():
             if isinstance(value, WebDriver):
-                path = item.config.getvalue("screenshot_path")
-                if path not in ("off", "on"):  # if command passes in the path, it is saved
-                    capture_screenshot(path, item.name, value)
-                    break
-                elif path == "on":  # save project root path
-                    filename = item.config.rootdir.strpath  # Get project root path
-                    filename = os.path.join(filename, "screenshot", time.strftime("%Y-%m-%d"))
-                    capture_screenshot(filename, item.name, value)
-                    break
-                else:  # Don't save, only attach allure
-                    data = value.get_screenshot_as_png()
-                    allure.attach(body=data, name=item.name, attachment_type=allure.attachment_type.PNG)
-                    break
+                instance = True
+                break
+        else:
+            driver = get_driver()
+            if driver:
+                instance = True
+                value = driver
+
+    if instance:
+        path = item.config.getvalue("screenshot_path")
+        if path not in ("off", "on"):  # if command passes in the path, it is saved
+            capture_screenshot(path, item.name, value)
+        elif path == "on":  # save project root path
+            filename = item.config.rootdir.strpath  # Get project root path
+            filename = os.path.join(filename, "screenshot", time.strftime("%Y-%m-%d"))
+            capture_screenshot(filename, item.name, value)
+        else:  # Don't save, only attach allure
+            data = value.get_screenshot_as_png()
+            allure.attach(body=data, name=item.name, attachment_type=allure.attachment_type.PNG)
 
 
 def capture_screenshot(filedir, page_name, driver):

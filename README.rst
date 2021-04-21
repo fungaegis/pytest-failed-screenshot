@@ -4,6 +4,8 @@ pytest-failed-screenshot: pytest plugin
 For UI automation test cases using selenium and appium, screenshots are
 saved when they fail, and are attached to the report when allure is used
 
+Support helium, the webdriver process cannot be killed within a use case
+
 install
 =======
 
@@ -31,7 +33,6 @@ Demo
 The driver instances of selenium and appium must be transferred by a
 fixture.
 
-
 .. code-block:: python
 
     import pytest
@@ -51,8 +52,31 @@ fixture.
         assert False
 
 
+    # helium demo
+    @pytest.fixture()
+    def init_helium():
+        yield None
+        kill_browser()
+
+
+    @pytest.mark.usefixtures("init_helium")
+    def test_helium_demo():
+        start_chrome("https://github.com/fungaegis/pytest-failed-screenshot")
+        # The webdriver process cannot be killed within a use case
+        assert False
+
+
 command: ``pytest --screenshot=on --screenshot_path=on``
 
 tip: Support the use of pytest-xdist together
 
+log
+===
+v1.0.1
+
+Support helium for screenshots , solve the problem https://github.com/fungaegis/pytest-failed-screenshot/issues/1
+
+v1.0.2
+
+Update the readme and add demo
 

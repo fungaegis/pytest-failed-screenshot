@@ -9,7 +9,7 @@ with open("./README.rst", "r") as readme:
 setup(
     name='pytest_failed_screenshot',
     url='https://github.com/fungaegis/pytest-failed-screenshot',
-    version='1.0.0',
+    version='1.0.2',
     author="fungaegis",
     author_email="fungaegis@gmail.com",
     description='Test case fails,take a screenshot,save it,attach it to the allure',
@@ -30,7 +30,8 @@ setup(
         'pytest',
         'selenium',
         'allure-pytest',
-        'allure-python-commons'
+        'allure-python-commons',
+        'helium'
     ],
     entry_points={
         'pytest11': [

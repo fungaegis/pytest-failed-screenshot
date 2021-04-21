@@ -5,6 +5,10 @@ For UI automation test cases using selenium and appium, screenshots are saved wh
 
 用于使用了Selenium和Appium的UI自动化测试用例在失败时进行截图保存并且在开启allure的时候会将截图附加到报告上
 
+Support helium, the webdriver process cannot be killed within a use case 
+
+支持helium失败截图, 但必须保证webdriver实例在用例内不被关闭.
+
 install
 =====
 
@@ -42,6 +46,7 @@ selenium和appium的驱动实例必须通过fixture函数的方式前置传入
 ```python
 import pytest
 from selenium import webdriver
+from helium import start_chrome, kill_browser
 
 
 @pytest.fixture()
@@ -54,6 +59,20 @@ def init_driver():
 
 def test_login_success(init_driver):
     init_driver.get("https://github.com/fungaegis/pytest-failed-screenshot")
+    assert False
+
+    
+# helium demo
+@pytest.fixture()
+def init_helium():
+    yield None
+    kill_browser()  
+    
+
+@pytest.mark.usefixtures("init_helium")
+def test_helium_demo():
+    start_chrome("https://github.com/fungaegis/pytest-failed-screenshot")
+    # The webdriver process cannot be killed within a use case
     assert False
 ```
 
@@ -68,3 +87,13 @@ tip:
 ![archive](./images/archive.png)
 
 ![allure](./images/attach.png)
+
+## log
+### v1.0.1
+Support helium for screenshots , solve the problem https://github.com/fungaegis/pytest-failed-screenshot/issues/1
+
+更新支持helium进行截图,解决https://github.com/fungaegis/pytest-failed-screenshot/issues/1的问题
+### v1.0.2
+Update the readme and add demo
+
+更新readme文档,增加使用示例
