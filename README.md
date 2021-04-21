@@ -1,9 +1,13 @@
 ### pytest-failed-screenshot
 
-For UI automation test cases using selenium and appium, screenshots are
-saved when they fail, and are attached to the report when allure is used
+For UI automation test cases using [selenium](https://github.com/SeleniumHQ/selenium/), [helium](https://github.com/mherrmann/selenium-python-helium) [appium](https://github.com/appium/python-client), screenshots are saved when they fail, 
+and are attached to the report when allure is used.
 
-Support helium, the webdriver process cannot be killed within a use case
+Support:
+- [selenium](https://github.com/SeleniumHQ/selenium/)
+- [helium](https://github.com/mherrmann/selenium-python-helium)
+- [appium](https://github.com/appium/python-client)
+- [pytest-xdist](https://github.com/pytest-dev/pytest-xdist)
 
 ### Installation
 
@@ -32,6 +36,4 @@ pytest --screenshot={on:off} --screenshot_path={on:off:absolute path}
 
 command: `pytest --screenshot=on --screenshot_path=on tests`
 
-tip:
-- Support the use of pytest-xdist together
-
+![Screenshot path](screenshot_history.png)
