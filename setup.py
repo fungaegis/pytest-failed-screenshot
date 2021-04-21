@@ -4,16 +4,13 @@ from setuptools import setup
 author: fungaegis
 github: https://github.com/fungaegis/pytest-failed-screenshot
 """
-with open("./README.rst", "r") as readme:
-    long_description = readme.read()
 setup(
     name='pytest_failed_screenshot',
     url='https://github.com/fungaegis/pytest-failed-screenshot',
     version='1.0.2',
     author="fungaegis",
     author_email="fungaegis@gmail.com",
-    description='Test case fails,take a screenshot,save it,attach it to the allure',
-    long_description=long_description,
+    description='Test case fails, take a screenshot, save it, attach it to the allure',
     classifiers=[
         'Framework :: Pytest',
         'Programming Language :: Python :: 3',
