@@ -5,9 +5,9 @@ author: fungaegis
 github: https://github.com/fungaegis/pytest-failed-screenshot
 """
 setup(
-    name='pytest_failed_screenshot',
+    name='screenshot',
     url='https://github.com/fungaegis/pytest-failed-screenshot',
-    version='1.0.2',
+    version='1.1.0',
     author="fungaegis",
     author_email="fungaegis@gmail.com",
     description='Test case fails, take a screenshot, save it, attach it to the allure',
@@ -23,9 +23,7 @@ setup(
         'Operating System :: POSIX :: Linux',
         'Operating System :: MacOS :: MacOS X'
     ],
-    keywords=[
-        'pytest', 'allure', 'screenshot', 'selenium', 'appium'
-    ],
+    keywords=['pytest', 'allure', 'screenshot', 'selenium', 'appium'],
     install_requires=[
         'pytest',
         'selenium',
