@@ -8,6 +8,7 @@ setup(
     author_email="fungaegis@gmail.com",
     description='Test case fails, take a screenshot, save it, attach it to the allure',
     python_requires='>=3',
+    license='MIT License',
     classifiers=[
         'Framework :: Pytest',
         'License :: OSI Approved :: MIT License',
@@ -18,7 +19,7 @@ setup(
         'Operating System :: POSIX :: Linux',
         'Operating System :: MacOS :: MacOS X'
     ],
-    py_modules=['pytest_failed_screenshot'],
+    py_modules=['screenshot'],
     keywords=[
         'pytest', 'allure', 'screenshot', 'selenium', 'appium', 'helium'
     ],
@@ -32,7 +33,7 @@ setup(
     ],
     entry_points={
         'pytest11': [
-            'failed_screenshot = pytest_failed_screenshot',
+            'failed_screenshot = screenshot',
         ]
     }
 )
