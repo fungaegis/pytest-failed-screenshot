@@ -19,7 +19,7 @@ setup(
         'Operating System :: POSIX :: Linux',
         'Operating System :: MacOS :: MacOS X'
     ],
-    py_modules=['backend.screenshot'],
+    py_modules=['backend'],
     keywords=[
         'pytest', 'allure', 'screenshot', 'selenium', 'appium', 'helium'
     ],
@@ -33,7 +33,7 @@ setup(
     ],
     entry_points={
         'pytest11': [
-            'failed_screenshot = backend.screenshot',
+            'failed_screenshot = backend',
         ]
     }
 )
